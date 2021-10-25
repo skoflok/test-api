@@ -18,4 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/**
+ * [LH REVIEW] Использовать ресурсы оверхед. Достаточно одной страницы для добавления просмотров. Можно было вынести в api.
+ *  Файл routes/api.php . Например Route::post('add-view/{uuid}', PageController@addView);
+ */
 Route::resource('pages', PageController::class);
