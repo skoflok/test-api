@@ -30,7 +30,7 @@ class PageController extends Controller
 
         /**
          * [LH REVIEW] Хотелось бы чуть подробнее в выводе. 
-         * Как писал в routes/web.php можно было сделать в АПИ и отдавать json {"success": true, "message":"view increment"} или что-то подобное.
+         * Как писал в routes/web.php можно было сделать в АПИ(routes/api.php) и отдавать json {"success": true, "message":"view increment"} или что-то подобное.
          * 
          */
         return response('', 200);

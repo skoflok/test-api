@@ -19,6 +19,13 @@ class StatController extends Controller
         $uuids = $request->input('uuids');
         $uuids = $uuids ? explode(',', $uuids) : [];
 
+        /**
+         * [LH REVIEW] 
+         * Прямой вывод из БД лучше не возвращать. 
+         * Ларавель преобразовывает коллекции в массив, но для поддержки 
+         * и читаемости лучше вынести в Illuminate\Http\Resources\Json\ResourceCollection и 
+         * Illuminate\Http\Resources\Json\JsonResource. Либо своё представление данных написать. 
+         */
         return DB::table('stats')
             ->select(DB::raw('page_uuid, count(page_uuid) as stats'))
             ->where(function ($query) use ($uuids){
